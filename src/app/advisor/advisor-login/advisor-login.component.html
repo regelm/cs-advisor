@@ -1,0 +1,22 @@
+<div class="form-container">
+  <h2>CS Advisor</h2>
+
+  <span class="error" *ngIf="error.message !== ''">{{ error.message }}</span>
+
+  <form #formData='ngForm' (ngSubmit)="onLoginEmail()" *ngIf="isNewUser">
+    <input type="text" class="form-control txt" id="email" placeholder="Email address.." [(ngModel)]="email" name="email" required>
+    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" class="form-control txt" required>
+
+    <button type="submit" class="btn btn-success basic-btn">Log in</button>
+    <button (click)="onLoginGoogle()" type="button" class="btn btn-success basic-btn">Sign in with Google</button>
+    <a (click)="changeForm()" class="alc">Don't have an account?</a>
+  </form>
+
+  <form #formData='ngForm' (ngSubmit)="onSignUp()" *ngIf="!isNewUser">
+    <input type="text" autocomplete="off" class="form-control txt" id="email" placeholder="Email address.." [(ngModel)]="email" name="email" required>
+    <input type="password" autocomplete="off" placeholder="Password" [(ngModel)]="password" name="password" class="form-control txt" required>
+
+    <button type="submit" class="btn btn-success basic-btn">Create Account</button>
+    <a (click)="changeForm()" class="alc">Already have an account?</a>
+  </form>
+</div>

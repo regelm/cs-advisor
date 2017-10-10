@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.students {
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+h2, h4 {
+    float: left;
+}
+
+.delete {
+    float: right;
+}
+
+.txt {
+    background:#fff !important;
+    padding:1.3em 1em;
+    font-size:1.3em;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    margin-left: 15px;
+    width: 90%;
+}
+
+.basic-btn {
+    background: #ffe100;
+    color:#161616;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 5px -2px #0E1119;
+    -moz-box-shadow: 0 5px 5px -2px #0E1119;
+         box-shadow: 0 5px 5px -2px #0E1119;
+}
+
+button {
+    padding:1.2em;
+    width: 90%;
+    cursor:pointer;
+    margin-bottom:25px;
+    font-size:1.3em;
+    margin-left: 15px;
+}
+
+.back {
+    position: absolute;
+    bottom: 0;
+    margin-left: -90%;
+}
+
+.tableContainer div:hover {
+    font-weight: bold;
+    
+    box-shadow: #494949 -1px 1px, #494949 -2px 2px, #494949 -3px 3px, #494949 -4px 4px, #494949 -5px 5px, #494949 -6px 6px;
+    transform: translate3d(1px, -3px, 0);
+    
+    transition-delay: 0s;
+        transition-duration: 0.2s;
+        transition-property: all;
+    transition-timing-function: line;
+}    
+
+.tableContainer {
+    background-color: #161616;
+    height: 100%;
+    margin-top: -65px;
+    overflow-y: auto;
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* .tableContainer div:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+} */

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.students {
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.student {
+	  font-weight: normal;
+	  font-size: 1em;
+  
+}
+
+.studentLi {
+    list-style: none;  
+}
+
+.student {
+    background-color: white;
+    border: 2% solid #202020;
+    border-radius: 3px;
+    width: 80%;
+    margin-top: 0px;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    height: 5%;
+    -webkit-box-shadow: 0 5px 5px -2px #0E1119;
+    -moz-box-shadow: 0 5px 5px -2px #0E1119;
+         box-shadow: 0 5px 5px -2px #0E1119;
+}
+
+.student h2, h4 {
+    margin-left: 5%;
+    margin-bottom: 0px;
+}
+
+.basic-btn {
+    background: #ffe100;
+    color:#161616;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 5px -2px #0E1119;
+    -moz-box-shadow: 0 5px 5px -2px #0E1119;
+         box-shadow: 0 5px 5px -2px #0E1119;
+}
+
+.addStudent {
+    padding:1.2em;
+    width: 77.5%;
+    cursor:pointer;
+    margin-bottom:25px;
+    position: absolute;
+    bottom: 0;
+    font-size:1.3em;
+    height: 10%;
+    margin-left: 8.5%;
+}
+
+.logout {
+    margin-top: -45px;
+    left: 20.5%;
+    position: absolute;
+}
+
+.tableContainer div:hover {
+    font-weight: bold;
+    
+    box-shadow: #494949 -1px 1px, #494949 -2px 2px, #494949 -3px 3px, #494949 -4px 4px, #494949 -5px 5px, #494949 -6px 6px;
+    transform: translate3d(1px, -3px, 0);
+    
+    transition-delay: 0s;
+        transition-duration: 0.2s;
+        transition-property: all;
+    transition-timing-function: line;
+}    
+
+.tableContainer {
+    background-color: #161616;
+    height: 100%;
+    margin-top: -65px;
+    overflow-y: auto;
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    text-align: left;
+    overflow: hidden;
+    width: 30%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+    float: left;
+    height: 100%;
+}
+
+/* .tableContainer div:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+} */
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #494949 -1px 1px, #494949 -2px 2px, #494949 -3px 3px, #494949 -4px 4px, #494949 -5px 5px, #494949 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
