@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CurrentClassesComponent } from './current-classes/current-classes.component';
+import { ClassFormComponent } from './current-classes/class-form/class-form.component';
+import { SemesterComponent } from './semesters/semester/semester.component';
 
 export const firebase = {
   apiKey: "AIzaSyAdtf_Z_EAwvitvK1ZHozvOmVsJ0OjA54c",
@@ -30,7 +33,10 @@ export const firebase = {
     AppComponent,
     StudentComponent,
     StudentFormComponent,
-    AdvisorLoginComponent
+    AdvisorLoginComponent,
+    CurrentClassesComponent,
+    ClassFormComponent,
+    SemesterComponent
   ],
   imports: [
     BrowserModule,

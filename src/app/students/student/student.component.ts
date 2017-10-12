@@ -32,6 +32,10 @@ export class StudentComponent implements OnInit {
     this.router.navigate(['/create-student'])
   }
 
+  currentClasses() {
+    this.router.navigate(['/current-classes'])
+  }
+
   logOut() {
     this.authService.signOut();
   }

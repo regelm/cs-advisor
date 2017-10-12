@@ -15,7 +15,6 @@ export class StudentService {
   constructor(private db: AngularFireDatabase,
               private authService: AuthService) {
                 this.students = this.db.list('students').valueChanges();  
-                this.student = this.db.object('student').valueChanges();
               }
 
 

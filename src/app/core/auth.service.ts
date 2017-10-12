@@ -8,12 +8,14 @@ import * as firebase from 'firebase/app';
 export class AuthService {
 
   authState: any = null;
+  uid;
   
    constructor(private afAuth: AngularFireAuth, 
                private router: Router,
                private db: AngularFireDatabase) {
      this.afAuth.authState.subscribe((auth) => {
        this.authState = auth
+       this.uid = this.authState.uid
      });
    }
   

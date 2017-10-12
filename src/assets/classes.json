@@ -1,0 +1,180 @@
+{
+    "classes": [
+        {
+            "SOC": "3040",
+            "Course": "CSC 121A ",
+            "Description": "Computer Science I",
+            "Credit": "1",
+            "Comp": "Q",
+            "Professor": "Khadija Stewart"
+        },
+        {
+            "SOC": "3041",
+            "Course": "CSC 121B ",
+            "Description": "Computer Science I",
+            "Credit": "1",
+            "Comp": "Q",
+            "Professor": "Gloria Townsend"
+        },
+        {
+            "SOC": "3042",
+            "Course": "CSC 121C ",
+            "Description": "Computer Science I",
+            "Credit": "1",
+            "Comp": "Q",
+            "Professor": "Maria Schwartzman"
+        },
+        {
+            "SOC": "1130",
+            "Course": "CSC 122A ",
+            "Description": "Data Structures",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Chad Byers"
+        },
+        {
+            "SOC": "1131",
+            "Course": "CSC 122B ",
+            "Description": "Data Structures",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Steven Bogaerts"
+        },
+        {
+            "SOC": "1132",
+            "Course": "CSC 197A ",
+            "Description": "FYS: Seduced By A Machine",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Gloria Townsend"
+        },
+        {
+            "SOC": "1133",
+            "Course": "CSC 231A ",
+            "Description": "Computer Systems",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Khadija Stewart"
+        },
+        {
+            "SOC": "1134",
+            "Course": "CSC 231B ",
+            "Description": "Computer Systems",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Steven Bogaerts"
+        },
+        {
+            "SOC": "1733",
+            "Course": "CSC 231C ",
+            "Description": "Computer Systems",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Khadija Stewart"
+        },
+        {
+            "SOC": "1135",
+            "Course": "CSC 232A ",
+            "Description": "ObjctOrientedSoftwareDev",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Chad Byers"
+        },
+        {
+            "SOC": "1136",
+            "Course": "CSC 232B ",
+            "Description": "ObjctOrientedSoftwareDev",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Scott Thede"
+        },
+        {
+            "SOC": "1137",
+            "Course": "CSC 233A ",
+            "Description": "Foundations of Computatn",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Brian Howard"
+        },
+        {
+            "SOC": "1702",
+            "Course": "CSC 233B ",
+            "Description": "Foundations of Computatn",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Brian Howard"
+        },
+        {
+            "SOC": "1138",
+            "Course": "CSC 240A ",
+            "Description": "Writing/Computer Science",
+            "Credit": "0.5",
+            "Comp": "",
+            "Professor": "David Berque"
+        },
+        {
+            "SOC": "1139",
+            "Course": "CSC 340A ",
+            "Description": "Web Progr&Cybersecurity",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Khadija Stewart"
+        },
+        {
+            "SOC": "1140",
+            "Course": "CSC 350A ",
+            "Description": "Graphics",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Chad Byers"
+        },
+        {
+            "SOC": "1735",
+            "Course": "CSC 360A ",
+            "Description": "Autonomous Robotics",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Gloria Townsend"
+        },
+        {
+            "SOC": "1739",
+            "Course": "CSC 396A ",
+            "Description": "Tps:Survey of Twitter to Gather Epidemiological Data",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Khadija Stewart"
+        },
+        {
+            "SOC": "1141",
+            "Course": "CSC 424A ",
+            "Description": "Programming Languages",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Brian Howard"
+        },
+        {
+            "SOC": "1142",
+            "Course": "CSC 440A ",
+            "Description": "Theory of Computation",
+            "Credit": "1",
+            "Comp": "",
+            "Professor": "Scott Thede"
+        },
+        {
+            "SOC": "1143",
+            "Course": "CSC 498A ",
+            "Description": "Senior Project",
+            "Credit": "1",
+            "Comp": "S",
+            "Professor": "Steven Bogaerts"
+        },
+        {
+            "SOC": "1144",
+            "Course": "CSC 498B ",
+            "Description": "Senior Project",
+            "Credit": "1",
+            "Comp": "S",
+            "Professor": "Maria Schwartzman"
+        }
+    ]
+}

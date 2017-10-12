@@ -4,7 +4,12 @@
   <form #formData='ngForm' (ngSubmit)="createStudent()">
     <input type="text" name="name" class="form-control txt" id="name" placeholder = "Full Name" [(ngModel)]="name" required>
     <input type="number" name="year" class="form-control txt" id="year" placeholder = "Graduation Year" [(ngModel)]="year" required>
-    <button type="submit" class="btn btn-success basic-btn">Create Student</button>
-    <button type="button" (click)="goBack()" class="btn btn-success basic-btn back">Go Back</button>
+    <button type="submit" class="btn btn-success basic-btn create">Create Student</button>
   </form>
 </div>
+<button type="button" (click)="logOut()" class="logout btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-log-out"></span> 
+</button>
+<button type="button" (click)="goBack()" class="goBack btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+</button>

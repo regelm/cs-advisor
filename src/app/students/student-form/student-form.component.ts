@@ -38,6 +38,7 @@ export class StudentFormComponent implements OnInit {
       advisorUID: this.authService.currentUser.uid,
       year: this.year
     }
+    console.log(tempStudent);
     
     if(this.validateForm(this.name, this.year)) {
       this.studentSvc.createStudent(tempStudent)
@@ -47,6 +48,10 @@ export class StudentFormComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/students'])
+  }
+
+  logOut() {
+    this.authService.signOut();
   }
 
   validateForm(name: string, year: number) {
