@@ -18,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CurrentClassesComponent } from './current-classes/current-classes.component';
 import { ClassFormComponent } from './current-classes/class-form/class-form.component';
 import { SemesterComponent } from './semesters/semester/semester.component';
-
+import { DragAndDropModule } from 'angular-draggable-droppable';
+import { DragulaModule } from 'ng2-dragula';
 export const firebase = {
   apiKey: "AIzaSyAdtf_Z_EAwvitvK1ZHozvOmVsJ0OjA54c",
   authDomain: "cs-advisor.firebaseapp.com",
@@ -44,7 +45,9 @@ export const firebase = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebase),
     AngularFireAuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragulaModule,    
+    DragAndDropModule.forRoot()
   ],
   providers: [
     AuthService,

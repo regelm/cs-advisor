@@ -12,7 +12,11 @@
 .class {
 	  font-weight: normal;
 	  font-size: 1em;
-  
+}
+
+.tableContainer div {
+    height: auto;
+    padding-bottom: 10px
 }
 
 .classesLi {
@@ -21,18 +25,21 @@
 
 .class {
     background-color: white;
+    color: black;
+    text-align: left;
     border: 2% solid #202020;
     border-radius: 3px;
     width: 80%;
     margin-top: 0px;
     margin-right: 5%;
     margin-bottom: 2%;
-    margin-left: 5%;
+    margin-left: 10%;
     height: 5%;
     padding-bottom: 10px;
     -webkit-box-shadow: 0 5px 5px -2px #0E1119;
     -moz-box-shadow: 0 5px 5px -2px #0E1119;
          box-shadow: 0 5px 5px -2px #0E1119;
+    z-index: 1;
 }
 
 .class h2, h4 {

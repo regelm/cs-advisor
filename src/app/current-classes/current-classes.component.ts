@@ -5,6 +5,7 @@ import { ClassesService } from './service/classes.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/auth.service';
 import { SemesterComponent } from '../semesters/semester/semester.component';
+import { DragAndDropModule } from 'angular-draggable-droppable'
 
 @Component({
   selector: 'app-current-classes',
@@ -36,6 +37,10 @@ export class CurrentClassesComponent implements OnInit {
 
   goToStudents() {
     this.router.navigate(['/students'])
+  }
+
+  dragEnd(event) {
+    console.log('Element was dragged', event);
   }
 
 }

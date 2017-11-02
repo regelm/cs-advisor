@@ -1,8 +1,8 @@
 <div class="tableContainer">
   <h2 class="students">Students</h2>
   <ul>
-    <li class="studentLi" *ngFor="let student of (students | async)" [class.done]="student.done">
-        <div class="student" (click)="currentClasses()">
+    <li class="studentLi" *ngFor="let student of (students | async); let i = index" [class.done]="student.done">
+        <div class="student" (click)="currentClasses(student.name)">
           <h2>{{ student.name }}</h2>
           <h4>{{ student.year }}</h4>
           <!-- <button type="button" (click)="deleteStudent()" class="delete btn btn-default btn-lg">
