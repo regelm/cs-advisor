@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {DragAndDropModule} from 'angular-draggable-droppable';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import { Class } from '../../current-classes/class';
 import { ClassesService } from '../../current-classes/service/classes.service';
 import { Router } from '@angular/router';
@@ -40,7 +40,6 @@ export class SemesterComponent implements OnInit {
                 dragulaService.drop.subscribe((value) => {
                   this.onDropModel(value.slice(1));
                 });
-                this.studentName = this.classService.getCurrentStudent();
               }
 
   ngOnInit() {
@@ -52,7 +51,7 @@ export class SemesterComponent implements OnInit {
     this.semester6 = this.classService.getSemester6();
     this.semester7 = this.classService.getSemester7();
     this.semester8 = this.classService.getSemester8();
-    this.classService.currentName.subscribe(name => this.studentName = name)
+    this.studentName = localStorage.getItem('studentName');
   }
 
   private onDropModel(args) {
@@ -66,12 +65,10 @@ export class SemesterComponent implements OnInit {
         credit: droppedCourse["Credit"],
         description: droppedCourse["Description"],
         semester: target.id,
-        student: "Nathan Niese"
+        student: this.studentName
       }
-
+      console.log("Student Name:");
       console.log(this.studentName);
-
-      console.log(classAdded)
       this.classService.addTakenClass(classAdded);
     }
     )
@@ -82,6 +79,11 @@ export class SemesterComponent implements OnInit {
   private onRemoveModel(args) {
     let [el, source] = args;
     // do something else
+  }
+
+  deleteClass(semester) {
+    // console.log(semester);
+    this.classService.deleteTakenClass(semester);
   }
 
 }

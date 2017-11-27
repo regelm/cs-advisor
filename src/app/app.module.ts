@@ -20,6 +20,8 @@ import { ClassFormComponent } from './current-classes/class-form/class-form.comp
 import { SemesterComponent } from './semesters/semester/semester.component';
 import { DragAndDropModule } from 'angular-draggable-droppable';
 import { DragulaModule } from 'ng2-dragula';
+import { StudentService } from './students/service/student.service';
+import { ClassesService } from './current-classes/service/classes.service';
 export const firebase = {
   apiKey: "AIzaSyAdtf_Z_EAwvitvK1ZHozvOmVsJ0OjA54c",
   authDomain: "cs-advisor.firebaseapp.com",
@@ -51,7 +53,9 @@ export const firebase = {
   ],
   providers: [
     AuthService,
-    AngularFireDatabase
+    AngularFireDatabase,
+    StudentService,
+    ClassesService
   ],
   bootstrap: [AppComponent]
 })

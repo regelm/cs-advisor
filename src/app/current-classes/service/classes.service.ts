@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angularfire2/database';
 import { AuthService } from '../../core/auth.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import { Class } from '../class';
 import * as firebase from 'firebase';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { classtaken } from '../../semesters/semester/classtaken';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
+
 
 
 export class studentName {
@@ -17,16 +21,19 @@ export class ClassesService {
   
 
   private basePath: string = '/classes';
+  private takenPath: string = '/classesTaken';
   private dropCount = 0;
   
 
   classes: Observable <Class[]>;
   classesTaken: Observable<Class[]>;
+  classesTakenFireList: AngularFireList<Class[]>;
   class: Observable <Class>;
   existClass: classtaken;
   currentStudent: studentName={name:"name"}
   private name = new BehaviorSubject<string>("Default name");
   currentName = this.name.asObservable();
+  classCount = 0;
 
   public semester1: Observable<Class[]>
   public semester2: Observable<Class[]>
@@ -41,14 +48,12 @@ export class ClassesService {
     private db: AngularFireDatabase,
     private authService: AuthService) {
       this.classes = this.db.list('classes').valueChanges();
+      this.classesTakenFireList = this.db.list('classesTaken');
   }
 
   setCurrentStudent(name) {
-    // console.log("Setting current name: " + name)
-    // this.currentStudent.name = name;
-    // console.log(this.currentStudent.name);
     this.name.next(name);
-    console.log(this.currentName);
+    localStorage.setItem('currentStudent', name);
   }
 
   getCurrentStudent() {
@@ -138,12 +143,23 @@ export class ClassesService {
   addTakenClass(newClass): void {
     this.getTakenClassList();
     const classesTaken = this.db.list('classesTaken');
-    // if(!this.checkExists(newClass.course)) {
-    // console.log("pushed");
-      classesTaken.push(newClass);
-    // }
-      
-    
+    classesTaken.push(newClass);
+  }
+
+  deleteTakenClass(c) {
+
+    const deleteClass = this.db.list(this.takenPath, ref => 
+      ref.orderByChild('course').equalTo(c.course)
+    ).snapshotChanges();
+
+    deleteClass.map(ref => {
+      const $key = ref[0].payload.key;
+      const info = ref[0].payload.val();
+      return {$key, info};
+    }).subscribe(course => {
+      const courseKey = course.$key;
+      this.classesTakenFireList.remove(courseKey);
+    })
   }
 
   checkExists(course) {

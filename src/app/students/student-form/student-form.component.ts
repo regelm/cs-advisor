@@ -8,7 +8,6 @@ import { Student } from '../student';
   selector: 'app-student-form',
   templateUrl: './student-form.component.html',
   styleUrls: ['./student-form.component.css'],
-  providers: [StudentService]
 })
 export class StudentFormComponent implements OnInit {
 

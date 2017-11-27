@@ -2,6 +2,9 @@
   <div class="tableContainer" [dragula]='"first-bag"'>
     <h2 class="classes">Current Classes</h2>
       <div class="class" id="{{ class.Course }}" *ngFor="let class of (classes | async)" [class.done]="class.done">
+          <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-plus"></span>
+          </button>
         <h2 class="course">{{ class.Course }}</h2>
         <h4 class="desc">{{ class.Description }}</h4>
       </div>

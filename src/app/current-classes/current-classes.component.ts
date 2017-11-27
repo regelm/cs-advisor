@@ -11,7 +11,6 @@ import { DragAndDropModule } from 'angular-draggable-droppable'
   selector: 'app-current-classes',
   templateUrl: './current-classes.component.html',
   styleUrls: ['./current-classes.component.css'],
-  providers: [ClassesService]
 })
 export class CurrentClassesComponent implements OnInit {
 
@@ -36,7 +35,9 @@ export class CurrentClassesComponent implements OnInit {
   }
 
   goToStudents() {
-    this.router.navigate(['/students'])
+    localStorage.removeItem('studentName');
+    localStorage.removeItem('currentStudent');
+    this.router.navigate(['/students']);
   }
 
   dragEnd(event) {

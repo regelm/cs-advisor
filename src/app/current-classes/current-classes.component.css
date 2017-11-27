@@ -103,7 +103,7 @@
 .tableContainer div:hover {
     font-weight: bold;
     
-    box-shadow: #494949 -1px 1px, #494949 -2px 2px, #494949 -3px 3px, #494949 -4px 4px, #494949 -5px 5px, #494949 -6px 6px;
+    box-shadow: #161616 -1px 1px, #161616 -2px 2px, #161616 -3px 3px, #161616 -4px 4px, #161616 -5px 5px, #161616 -6px 6px;
     transform: translate3d(1px, -3px, 0);
     
     transition-delay: 0s;
@@ -146,7 +146,7 @@
   color: #403E10;
   font-weight: bold;
   
-  box-shadow: #494949 -1px 1px, #494949 -2px 2px, #494949 -3px 3px, #494949 -4px 4px, #494949 -5px 5px, #494949 -6px 6px;
+  box-shadow: #161616 -1px 1px, #161616 -2px 2px, #161616 -3px 3px, #161616 -4px 4px, #161616 -5px 5px, #161616 -6px 6px;
   transform: translate3d(6px, -6px, 0);
   
   transition-delay: 0s;
@@ -169,4 +169,27 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px #ffe100; 
     background-color: #ffe100;
+}
+
+button {
+    float:right;
+    border: none;
+    opacity: 0;
+    width: 5px;
+    border-radius: 2px;
+    padding-top:5px;
+    padding-bottom: 3px;
+    height: 72px;
+}
+
+
+.class:hover button { /* or */
+    background-color: #4eed40;
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    padding-left: 5px;
+    padding-right: 23px;
 }

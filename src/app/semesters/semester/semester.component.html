@@ -1,66 +1,106 @@
 <div class="row">
   <div class="col-md-4 col-md-offset-3 semester" id="1" [dragula]='"first-bag"' [dragulaModel]='semester1'>
     <h2>{{ year }} Semester 1 </h2>
-    <div class="class" *ngFor="let semester of (semester1 | async)">
-      <h2 class="course">{{ semester.course }}</h2>
-      <h4 class="desc">{{ semester.description }}</h4>
-    </div>
+    <ng-container *ngFor="let semester of (semester1 | async); let i = index">
+      <div class="class" *ngIf="semester.student == studentName">
+          <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-remove"></span>
+          </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+      </div>
+    </ng-container>
   </div>
   <div class="col-md-4 col-md-offset-1" id="2" [dragula]='"first-bag"' [dragulaModel]='semester2'>
     <h2>{{ year }} Semester 2 </h2>
-    <div class="class" *ngFor="let semester of (semester2 | async)">
-      <h2 class="course">{{ semester.course }}</h2>
-      <h4 class="desc">{{ semester.description }}</h4>
-    </div>
+    <ng-container *ngFor="let semester of (semester2 | async); let i = index">        
+      <div class="class" *ngIf="semester.student == studentName">
+          <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        <h2 class="course">{{ semester.course }}</h2>
+        <h4 class="desc">{{ semester.description }}</h4>
+      </div>
+    </ng-container>
   </div>
 </div>  
 <div class="row">
   <div class="col-md-4 col-md-offset-3 semester" id="3" [dragula]='"first-bag"' [dragulaModel]='semester1'>
       <h2>Sophomore Semester 1 </h2>
-      <div class="class" *ngFor="let semester of (semester3 | async)">
-        <h2 class="course">{{ semester.course }}</h2>
-        <h4 class="desc">{{ semester.description }}</h4>
-      </div>
+      <ng-container *ngFor="let semester of (semester3 | async); let i = index">          
+        <div class="class" *ngIf="semester.student == studentName">
+            <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-4 col-md-offset-1" id="4" [dragula]='"first-bag"' [dragulaModel]='semester2'>
       <h2>Sophomore Semester 2 </h2>
-      <div class="class" *ngFor="let semester of (semester4 | async)">
-        <h2 class="course">{{ semester.course }}</h2>
-        <h4 class="desc">{{ semester.description }}</h4>
-      </div>
+      <ng-container *ngFor="let semester of (semester4 | async); let i = index">
+          <div class="class" *ngIf="semester.student == studentName">
+            <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+        </div>
+      </ng-container>
     </div>
 </div>
 
 <div class="row">
   <div class="col-md-4 col-md-offset-3 semester" id="5" [dragula]='"first-bag"' [dragulaModel]='semester1'>
       <h2>Junior Semester 1 </h2>
-      <div class="class" *ngFor="let semester of (semester5 | async)">
-        <h2 class="course">{{ semester.course }}</h2>
-        <h4 class="desc">{{ semester.description }}</h4>
-      </div>
+      <ng-container *ngFor="let semester of (semester5 | async); let i = index">          
+        <div class="class" *ngIf="semester.student == studentName">
+            <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-4 col-md-offset-1" id="6" [dragula]='"first-bag"' [dragulaModel]='semester2'>
       <h2>Junior Semester 2 </h2>
-      <div class="class" *ngFor="let semester of (semester6 | async)">
-        <h2 class="course">{{ semester.course }}</h2>
-        <h4 class="desc">{{ semester.description }}</h4>
-      </div>
+      <ng-container *ngFor="let semester of (semester6 | async); let i = index">          
+        <div class="class" *ngIf="semester.student == studentName">
+            <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+        </div>
+      </ng-container>
     </div>
 </div>
   
 <div class="row">
   <div class="col-md-4 col-md-offset-3 semester" id="7" [dragula]='"first-bag"' [dragulaModel]='semester1'>
       <h2>Senior Semester 1 </h2>
-      <div class="class" *ngFor="let semester of (semester7 | async)">
-        <h2 class="course">{{ semester.course }}</h2>
-        <h4 class="desc">{{ semester.description }}</h4>
-      </div>
+      <ng-container *ngFor="let semester of (semester7 | async); let i = index">          
+        <div class="class" *ngIf="semester.student == studentName">
+            <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+        </div>
+      </ng-container>
     </div>
     <div class="col-md-4 col-md-offset-1" id="8" [dragula]='"first-bag"' [dragulaModel]='semester2'>
       <h2>Senior Semester 2 </h2>
-      <div class="class" *ngFor="let semester of (semester8 | async)">
-        <h2 class="course">{{ semester.course }}</h2>
-        <h4 class="desc">{{ semester.description }}</h4>
-      </div>
+      <ng-container *ngFor="let semester of (semester8 | async); let i = index">          
+        <div class="class" *ngIf="semester.student == studentName">
+            <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <h2 class="course">{{ semester.course }}</h2>
+          <h4 class="desc">{{ semester.description }}</h4>
+        </div>
+      </ng-container>
     </div>
 </div>
