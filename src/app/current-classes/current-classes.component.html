@@ -2,7 +2,7 @@
   <div class="tableContainer" [dragula]='"first-bag"'>
     <h2 class="classes">Current Classes</h2>
       <div class="class" id="{{ class.Course }}" *ngFor="let class of (classes | async)" [class.done]="class.done">
-          <button type="button" (click)="deleteClass(semester)" class="createStudent btn btn-default btn-lg">
+          <button type="button" id="{{ class.Course }}" (click)="openModal(template, class.Course)" class="selectSemester btn btn-default btn-lg">
               <span class="glyphicon glyphicon-plus"></span>
           </button>
         <h2 class="course">{{ class.Course }}</h2>
@@ -22,3 +22,20 @@
 <button type="button" (click)="goToStudents()" class="goBack btn btn-default btn-lg">
   <span class="glyphicon glyphicon-chevron-left"></span>
 </button>
+<ng-template #template>
+  <form #formData='ngForm' (ngSubmit)="addSemesterClass()">
+    <label><h3>Select Year</h3></label>
+    <select name="year" class="form-control select" id="year" [(ngModel)]="year" required>
+      <option [value]=1>Freshmen</option>
+      <option [value]=2>Sophomore</option>
+      <option [value]=3>Junior</option>
+      <option [value]=4>Senior</option>
+    </select>
+    <label><h3>Select Semester</h3></label>
+    <select name="semester" class="form-control select" id="semester" [(ngModel)]="semester" required>
+        <option [value]=1>1</option>
+        <option [value]=2>2</option>
+    </select>
+    <button type="submit" class="btn" id="modalButton">Submit</button>    
+  </form>
+</ng-template>

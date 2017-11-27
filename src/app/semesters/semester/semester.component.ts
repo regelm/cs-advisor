@@ -40,6 +40,7 @@ export class SemesterComponent implements OnInit {
                 dragulaService.drop.subscribe((value) => {
                   this.onDropModel(value.slice(1));
                 });
+                this.studentName = localStorage.getItem('studentName')
               }
 
   ngOnInit() {

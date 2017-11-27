@@ -22,6 +22,9 @@ import { DragAndDropModule } from 'angular-draggable-droppable';
 import { DragulaModule } from 'ng2-dragula';
 import { StudentService } from './students/service/student.service';
 import { ClassesService } from './current-classes/service/classes.service';
+import { PopoverModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
+
 export const firebase = {
   apiKey: "AIzaSyAdtf_Z_EAwvitvK1ZHozvOmVsJ0OjA54c",
   authDomain: "cs-advisor.firebaseapp.com",
@@ -49,7 +52,9 @@ export const firebase = {
     AngularFireAuthModule,
     ReactiveFormsModule,
     DragulaModule,    
-    DragAndDropModule.forRoot()
+    DragAndDropModule.forRoot(),
+    PopoverModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     AuthService,
