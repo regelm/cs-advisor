@@ -24,6 +24,8 @@ import { StudentService } from './students/service/student.service';
 import { ClassesService } from './current-classes/service/classes.service';
 import { PopoverModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
 
 export const firebase = {
   apiKey: "AIzaSyAdtf_Z_EAwvitvK1ZHozvOmVsJ0OjA54c",
@@ -54,7 +56,8 @@ export const firebase = {
     DragulaModule,    
     DragAndDropModule.forRoot(),
     PopoverModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [
     AuthService,

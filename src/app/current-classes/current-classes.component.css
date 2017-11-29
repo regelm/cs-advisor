@@ -192,6 +192,10 @@
     color: black;
 }
 
+.alert-danger {
+    margin: 15px !important;
+}
+
 label {
     margin-left: 120px;
 }

@@ -162,6 +162,7 @@ export class ClassesService {
   }
 
   deleteTakenClass(c) {
+    var count = 0;
     this.getCurrentStudent();
     this.classesTakenFireList = this.db.list('classesTaken/' + this.studentName);              
     const deleteClass = this.db.list('classesTaken/'+ this.studentName, ref => 
@@ -177,7 +178,10 @@ export class ClassesService {
     }).subscribe(course => {
       console.log("Deleting Course");      
       const courseKey = course.$key;
-      this.classesTakenFireList.remove(courseKey);
+      if(count == 0) {
+        this.classesTakenFireList.remove(courseKey);
+        count += 1;        
+      }
     })
   }
 
@@ -202,6 +206,7 @@ export class ClassesService {
     return distList;
   }
   increaseSS() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -214,10 +219,15 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["SS"];
       updatedSS += 1;
-      distListUpdate.update(courseKey, {'SS': updatedSS})
+      if(count == 0) {
+        distListUpdate.update(courseKey, {'SS': updatedSS})
+        count += 1;
+      }
     })   
   }
+  
   decreaseSS() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -230,7 +240,11 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["SS"];
       updatedSS -= 1;
-      distListUpdate.update(courseKey, {'SS': updatedSS})
+      if(count == 0) {
+        distListUpdate.update(courseKey, {'SS': updatedSS});
+        count += 1;
+      }
+      
     })   
   }
  
@@ -240,6 +254,7 @@ export class ClassesService {
     return distList;
   }
   increaseSM() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -252,10 +267,14 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["SM"];
       updatedSS += 1;
-      distListUpdate.update(courseKey, {'SM': updatedSS})
+      if(count == 0) {
+        distListUpdate.update(courseKey, {'SM': updatedSS})
+        count += 1;        
+      }
     }) 
   }
   decreaseSM() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -268,7 +287,10 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["SM"];
       updatedSS -= 1;
-      distListUpdate.update(courseKey, {'SM': updatedSS})
+      if(count == 0) {
+        distListUpdate.update(courseKey, {'SM': updatedSS})
+        count += 1;        
+      }
     }) 
   }
 
@@ -278,6 +300,7 @@ export class ClassesService {
     return distList; 
   }
   increaseAH() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -290,10 +313,14 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["AH"];
       updatedSS += 1;
-      distListUpdate.update(courseKey, {'AH': updatedSS})
+      if(count ==  0) {
+        distListUpdate.update(courseKey, {'AH': updatedSS})
+        count += 1;        
+      }
     }) 
   }
   decreaseAH() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -306,7 +333,10 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["AH"];
       updatedSS -= 1;
-      distListUpdate.update(courseKey, {'AH': updatedSS})
+      if(count == 0) {
+        distListUpdate.update(courseKey, {'AH': updatedSS})
+        count += 1;
+      }
     }) 
   }
 
@@ -316,6 +346,7 @@ export class ClassesService {
     return distList; 
   }
   increaseFL() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -328,10 +359,14 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["FL"];
       updatedSS += 1;
-      distListUpdate.update(courseKey, {'FL': updatedSS})
+      if (count == 0) {
+        distListUpdate.update(courseKey, {'FL': updatedSS})
+        count += 1;
+      }
     }) 
   }
   decreaseFL() {
+    var count = 0;
     this.getCurrentStudent();
     const distList = this.db.list('distributions/' + this.studentName).snapshotChanges();
     const distListUpdate = this.db.list('distributions/' + this.studentName);
@@ -344,7 +379,10 @@ export class ClassesService {
       const courseKey = dist.$key;
       var updatedSS = dist.info["FL"];
       updatedSS -= 1;
-      distListUpdate.update(courseKey, {'FL': updatedSS})
+      if (count == 0) {
+        distListUpdate.update(courseKey, {'FL': updatedSS})
+        count += 1;        
+      }
     }) 
   }
 }

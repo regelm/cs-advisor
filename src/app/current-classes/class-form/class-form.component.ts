@@ -4,6 +4,7 @@ import { AuthService } from '../../core/auth.service';
 import { ClassesService } from '../service/classes.service';
 import { Class } from '../class';
 
+
 @Component({
   selector: 'app-class-form',
   templateUrl: './class-form.component.html',
@@ -17,6 +18,8 @@ export class ClassFormComponent implements OnInit {
               private classService: ClassesService
   ) { }
 
+  classList;
+
   Description = '';
   Course = '';
   Professor = '';
@@ -25,6 +28,7 @@ export class ClassFormComponent implements OnInit {
   SOC = ''
   errorMessage = '';
   error: {name: string, message: string } = {name: '', message: ''};
+  alerts: any = [];
 
   ngOnInit() {
   }
@@ -45,11 +49,29 @@ export class ClassFormComponent implements OnInit {
       Professor: this.Professor,
       SOC: this.SOC
     }
-    console.log(tempClass);
-
-    this.classService.addClass(tempClass)
-    this.router.navigate(['/current-classes'])
-
+    
+    this.classList = this.classService.getCurrentClassList();
+    var count = 0;    
+    this.classList.subscribe(ref => {
+      var exists = false;
+      ref.forEach(element => {
+                if(element.Course.replace(/\s/g, '') == tempClass.Course.replace(/\s/g, '')) {
+          exists = true;
+        }
+      })
+      if(!exists && count == 0) {
+        this.classService.addClass(tempClass);
+        count += 1;
+        this.router.navigate(['/current-classes'])
+      } else {
+        console.log("Pushing Alert");
+        this.alerts.push({
+          type: 'danger',
+          msg: `That class already exists!`,
+          timeout: 100000
+        });
+      }
+    })
   }
 
   goBack() {

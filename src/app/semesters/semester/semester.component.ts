@@ -35,7 +35,9 @@ export class SemesterComponent implements OnInit {
   public qComp: number;
   public sComp: number;
   public wComp: number;
-  public ssNum; smNum; ahNum; flNum;
+  public ssNum; smNum; ahNum; flNum; classList;
+  public localClassList = [];
+  public localTakenList = [];
   
 
   constructor(private classService: ClassesService,
@@ -56,32 +58,27 @@ export class SemesterComponent implements OnInit {
     this.getSM();
     this.getFL();
     this.getAH();
+    this.checkRecomendations();
   }
 
-  // private onDropModel(args) {
-  //   let [el, target, source] = args;
-  //   const className = el.id;
-  //   const tempClass = this.classService.getClass(className);
-  //   tempClass.subscribe(ref => {
-  //     const droppedCourse = ref[0]
-  //     const classAdded = {
-  //       course: droppedCourse["Course"],
-  //       credit: droppedCourse["Credit"],
-  //       description: droppedCourse["Description"],
-  //       semester: target.id,
-  //       student: this.studentName
-  //     }
-  //     console.log("Student Name:");
-  //     console.log(this.studentName);
-  //     this.classService.addTakenClass(classAdded);
-  //   }
-  //   )
-  //   document.getElementById(el.id).style.visibility='hidden';
+  private checkRecomendations() {
+    this.classList = this.classService.getCurrentClassList();
+    var count = 0; 
+    this.classList.subscribe(ref => {
+      var exists = false;
+      ref.forEach(element => {
+        this.localClassList.push(element);
+      })
+    })
     
-  // }
+  }
 
   private refreshSemesters() {
+    this.localTakenList = [];
     this.semester1 = this.classService.getSemester1();
+    this.semester1.subscribe(ref => {
+
+    })
     this.semester2 = this.classService.getSemester2();
     this.semester3 = this.classService.getSemester3();
     this.semester4 = this.classService.getSemester4();
@@ -196,9 +193,6 @@ export class SemesterComponent implements OnInit {
         }
       })
     })
-    console.log(this.qComp);
-    console.log(this.wComp);
-    console.log(this.sComp);
   }
 
   deleteClass(semester) {

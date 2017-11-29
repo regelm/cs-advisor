@@ -1,6 +1,5 @@
 <div class="tableContainer">
   <h2 class="students">Add Class</h2>
-
   <form #formData='ngForm' (ngSubmit)="addClass()">
     <input type="text" name="description" class="form-control txt" id="description" placeholder = "Class Name" [(ngModel)]="Description" required>
     <input type="text" name="course" class="form-control txt" id="course" placeholder = "Course (I.E CSC 121)" [(ngModel)]="Course" required>
@@ -8,6 +7,9 @@
     <input type="text" name="credit" class="form-control txt" id="credit" placeholder="Credit" [(ngModel)]="Credit" required>
     <input type="text" name="comp" class="form-control txt" id="comp" placeholder="Competencey" [(ngModel)]="Comp" required>
     <button type="submit" class="btn btn-success basic-btn create">Add Class</button>
+    <div *ngFor="let alert of alerts">
+      <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+    </div>
   </form>
 </div>
 <button type="button" (click)="logOut()" class="logout btn btn-default btn-lg">
