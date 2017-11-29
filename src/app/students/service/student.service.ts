@@ -33,6 +33,16 @@ export class StudentService {
     return this.student
   }
 
+  setStudentDist(name) {
+    const dist = this.db.list('distributions/'+name)
+    dist.push({
+      'SS': 0,
+      'SM': 0,
+      'AH': 0,
+      'FL': 0
+    })
+  }
+
   createStudent(student: Student): void {
     this.getStudentsList();
     const students = this.db.list('students');

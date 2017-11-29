@@ -38,6 +38,8 @@ export class StudentFormComponent implements OnInit {
       year: this.year
     }
     console.log(tempStudent);
+
+    this.studentSvc.setStudentDist(tempStudent.name);
     
     if(this.validateForm(this.name, this.year)) {
       this.studentSvc.createStudent(tempStudent)
