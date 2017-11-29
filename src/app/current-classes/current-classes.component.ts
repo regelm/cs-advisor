@@ -80,7 +80,8 @@ export class CurrentClassesComponent implements OnInit {
         credit: clickedCourse["Credit"],
         description: clickedCourse["Description"],
         semester: this.semesterFinal, 
-        student: this.studentName
+        student: this.studentName,
+        comp: clickedCourse["Comp"]
       }
 
       this.classService.addTakenClass(classAdded);

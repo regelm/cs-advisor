@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="tableContainer" [dragula]='"first-bag"'>
+  <div class="tableContainer">
     <h2 class="classes">Current Classes</h2>
       <div class="class" id="{{ class.Course }}" *ngFor="let class of (classes | async)" [class.done]="class.done">
           <button type="button" id="{{ class.Course }}" (click)="openModal(template, class.Course)" class="selectSemester btn btn-default btn-lg">
@@ -33,8 +33,8 @@
     </select>
     <label><h3>Select Semester</h3></label>
     <select name="semester" class="form-control select" id="semester" [(ngModel)]="semester" required>
-        <option [value]=1>1</option>
-        <option [value]=2>2</option>
+        <option [value]=1>1st</option>
+        <option [value]=2>2nd</option>
     </select>
     <button type="submit" class="btn" id="modalButton">Submit</button>    
   </form>

@@ -1,5 +1,17 @@
 <div class="row">
-  <div class="col-md-4 col-md-offset-3 semester" id="1" [dragula]='"first-bag"' [dragulaModel]='semester1'>
+    <div class="col-md-3" id="recomendations">
+      <h2>Requirements</h2>
+      <h3 class="comp">Q:</h3>
+      <span class="glyphicon glyphicon-remove icon req" *ngIf="!qComp"></span>
+      <span class="glyphicon glyphicon-ok icon reqTrue" *ngIf="qComp"></span>
+      <h3 class="comp">W:</h3>
+      <span class="glyphicon glyphicon-remove icon req" *ngIf="!wComp"></span>
+      <span class="glyphicon glyphicon-ok icon reqTrue" *ngIf="wComp"></span>
+      <h3 class="comp">S:</h3>
+      <span class="glyphicon glyphicon-remove icon req" *ngIf="!sComp"></span>
+      <span class="glyphicon glyphicon-ok icon reqTrue" *ngIf="sComp"></span>
+    </div>
+  <div class="col-md-4 semester" id="1">
     <h2>{{ year }} Semester 1 </h2>
     <ng-container *ngFor="let semester of (semester1 | async); let i = index">
       <div class="class" *ngIf="semester.student == studentName">
@@ -11,7 +23,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="col-md-4 col-md-offset-1" id="2" [dragula]='"first-bag"' [dragulaModel]='semester2'>
+  <div class="col-md-4 col-md-offset-1" id="2">
     <h2>{{ year }} Semester 2 </h2>
     <ng-container *ngFor="let semester of (semester2 | async); let i = index">        
       <div class="class" *ngIf="semester.student == studentName">
@@ -25,7 +37,7 @@
   </div>
 </div>  
 <div class="row">
-  <div class="col-md-4 col-md-offset-3 semester" id="3" [dragula]='"first-bag"' [dragulaModel]='semester1'>
+  <div class="col-md-4 col-md-offset-3 semester" id="3">
       <h2>Sophomore Semester 1 </h2>
       <ng-container *ngFor="let semester of (semester3 | async); let i = index">          
         <div class="class" *ngIf="semester.student == studentName">
@@ -37,7 +49,7 @@
         </div>
       </ng-container>
     </div>
-    <div class="col-md-4 col-md-offset-1" id="4" [dragula]='"first-bag"' [dragulaModel]='semester2'>
+    <div class="col-md-4 col-md-offset-1" id="4">
       <h2>Sophomore Semester 2 </h2>
       <ng-container *ngFor="let semester of (semester4 | async); let i = index">
           <div class="class" *ngIf="semester.student == studentName">
@@ -52,7 +64,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-3 semester" id="5" [dragula]='"first-bag"' [dragulaModel]='semester1'>
+  <div class="col-md-4 col-md-offset-3 semester" id="5">
       <h2>Junior Semester 1 </h2>
       <ng-container *ngFor="let semester of (semester5 | async); let i = index">          
         <div class="class" *ngIf="semester.student == studentName">
@@ -64,7 +76,7 @@
         </div>
       </ng-container>
     </div>
-    <div class="col-md-4 col-md-offset-1" id="6" [dragula]='"first-bag"' [dragulaModel]='semester2'>
+    <div class="col-md-4 col-md-offset-1" id="6">
       <h2>Junior Semester 2 </h2>
       <ng-container *ngFor="let semester of (semester6 | async); let i = index">          
         <div class="class" *ngIf="semester.student == studentName">
@@ -79,7 +91,7 @@
 </div>
   
 <div class="row">
-  <div class="col-md-4 col-md-offset-3 semester" id="7" [dragula]='"first-bag"' [dragulaModel]='semester1'>
+  <div class="col-md-4 col-md-offset-3 semester" id="7">
       <h2>Senior Semester 1 </h2>
       <ng-container *ngFor="let semester of (semester7 | async); let i = index">          
         <div class="class" *ngIf="semester.student == studentName">
@@ -91,7 +103,7 @@
         </div>
       </ng-container>
     </div>
-    <div class="col-md-4 col-md-offset-1" id="8" [dragula]='"first-bag"' [dragulaModel]='semester2'>
+    <div class="col-md-4 col-md-offset-1" id="8">
       <h2>Senior Semester 2 </h2>
       <ng-container *ngFor="let semester of (semester8 | async); let i = index">          
         <div class="class" *ngIf="semester.student == studentName">

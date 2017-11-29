@@ -172,6 +172,7 @@
 }
 
 .selectSemester{
+    color: white;
     float:right;
     border: none;
     opacity: 0;
@@ -216,7 +217,7 @@ form {
 
 
 .class:hover button { /* or */
-    background-color: #4eed40;
+    background-color: #3aad51;
     opacity: 1;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
