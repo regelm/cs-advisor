@@ -54,38 +54,92 @@ export class SemesterComponent implements OnInit {
     this.refreshSemesters();
     this.studentName = localStorage.getItem('studentName');
     this.checkComps();
+    this.setLocalTakenList();    
     this.getSS();
     this.getSM();
     this.getFL();
     this.getAH();
     this.checkRecomendations();
+    console.log(this.localTakenList);
   }
 
   private checkRecomendations() {
-    this.classList = this.classService.getCurrentClassList();
-    var count = 0; 
-    this.classList.subscribe(ref => {
-      var exists = false;
-      ref.forEach(element => {
-        this.localClassList.push(element);
+    this.localClassList = [];
+    this.classService.getTakenClassList().subscribe(taken => {
+      var takenList = [];
+      taken.forEach(element => {
+        takenList.push(element["course"]);
+      })
+      console.log(takenList);
+      this.classList = this.classService.getCurrentClassList();
+      this.classList.subscribe(ref => {
+        ref.forEach(element => {
+          console.log(takenList.includes(element.Course));
+          if(!takenList.includes(element.Course)) {
+            this.localClassList.push(element);
+          }
+        })
       })
     })
-    
+  }
+
+  private setLocalTakenList() {
+    this.classService.getTakenClassList().subscribe(ref => {
+      ref.forEach(course => {
+        this.localTakenList.push(course.Course);
+      })
+    })
   }
 
   private refreshSemesters() {
-    this.localTakenList = [];
     this.semester1 = this.classService.getSemester1();
-    this.semester1.subscribe(ref => {
-
-    })
+    // this.semester1.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester2 = this.classService.getSemester2();
+    // this.semester2.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester3 = this.classService.getSemester3();
+    // this.semester3.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester4 = this.classService.getSemester4();
+    // this.semester4.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester5 = this.classService.getSemester5();
+    // this.semester5.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester6 = this.classService.getSemester6();
+    // this.semester6.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester7 = this.classService.getSemester7();
+    // this.semester7.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
     this.semester8 = this.classService.getSemester8();
+    // this.semester8.subscribe(ref => {
+    //   ref.forEach(course => {
+    //     this.localTakenList.push(course["course"]);
+    //   })
+    // })
   }
 
   private checkComps() {
@@ -167,7 +221,7 @@ export class SemesterComponent implements OnInit {
         }
       })
     })
-    this.semester8.subscribe(ref => {
+    this.semester7.subscribe(ref => {
       ref.forEach(course => {
         if(course["comp"] == 'Q' || course["comp"] == 'q') {
           this.qComp += 1;
@@ -206,7 +260,7 @@ export class SemesterComponent implements OnInit {
       this.sComp -= 1;
     }
     this.classService.deleteTakenClass(semester);
-    // location.reload();
+    this.checkRecomendations();
   }
 
   getSS() {

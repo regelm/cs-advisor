@@ -225,7 +225,7 @@ export class ClassesService {
       }
     })   
   }
-  
+
   decreaseSS() {
     var count = 0;
     this.getCurrentStudent();
